@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="css/sign.css">
+    <link rel="icon" href="images/icon.jpg" type="image/png">
+    
+</head>
+<body>
+    
+<div class="box-form">
+    <div class="left">
+        <div class="overlay">
+            <h1>KVCET</h1>
+        </div>
+    </div>
+        
+    <div class="right">
+        <h1><b> Registration </b></h1>
+        <div class="inputs">
+            <form action="/signup" method="post" onsubmit="return validateForm()">
+                <input type="text" name="username" placeholder="Student Name" required autocomplete="off">
+                <br>
+                <input type="password" name="password" id="regNumber" placeholder="Register Number"  required>
+                <br>
+                <input type="text" name="dept" placeholder="Department">
+                <br>
+                <input type="text" name="year" placeholder="Year">
+                <br>
+                <br>
+                <br>
+                <button type="submit" onclick="" class="btn">Submit</button>
+            </form>
+            <div class="footer"><center>
+                <p>Already have an account? <a class="link" href="login.html">Sign In</a></p>
+                </center>
+              </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script> 
+</body>
+
+</html>

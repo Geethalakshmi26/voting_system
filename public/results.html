@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Election Results</title>
+  <link rel="stylesheet" href="css/results.css" />
+  <link rel="icon" href="/images/result.webp" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎉 Congratulations to <span id="winner-name"></span>! 🎉</h1>
+    
+    <div class="results" id="results-container"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const response = await fetch("/results");
+        const data = await response.json();
+
+        if (data.length > 0) {
+          const winner = data[0];
+          document.getElementById("winner-name").textContent = winner.name;
+
+          const container = document.getElementById("results-container");
+          
+          data.forEach(candidate => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            // Highlight winner with a different class
+            const winnerClass = candidate.name === winner.name ? 'winner' : '';
+            
+            card.innerHTML = `
+              <div class="card-content ${winnerClass}">
+                <img src="${candidate.image}" alt="${candidate.name}" class="candidate-img" />
+                <div class="candidate-info">
+                  <h2>${candidate.name}</h2>
+                  <p><strong>Votes:</strong> ${candidate.votes}</p>
+                </div>
+              </div>
+            `;
+
+            container.appendChild(card);
+          });
+        } else {
+          document.querySelector(".title").textContent = "No votes recorded yet.";
+        }
+      } catch (error) {
+        console.error("Error loading results:", error);
+        document.querySelector(".title").textContent = "Error loading results.";
+      }
+    });
+  </script>
+</body>
+</html>

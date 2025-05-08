@@ -1,0 +1,74 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 40px 20px;
+  text-align: center;
+  background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+  background-size: cover;
+}
+
+.title {
+  font-size: 2rem;
+  color: #e6eaed;
+  margin-bottom: 40px;
+}
+
+#results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.card {
+  background-color: #f1e1ed;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card .card-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card .card-content.winner {
+  background-color: #fce4ec;
+  border: 2px solid #f06292;
+}
+
+.card .candidate-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card .candidate-info h2 {
+  margin: 0;
+  color: #34495e;
+  font-size: 1.5rem;
+}
+
+.card .candidate-info p {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.winner .candidate-info h2 {
+  color: #e91e63;
+}

@@ -1,0 +1,105 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+.kvcet img {
+    position: absolute;
+    margin: 5px;
+    margin-left: 15px;
+    width: 150px;
+}
+
+.container {
+    background-image: linear-gradient(45deg, #efefef 25%, rgba(239, 239, 239, 0) 25%, rgba(239, 239, 239, 0) 75%, #efefef 75%, #efefef), linear-gradient(45deg, #efefef 25%, rgba(239, 239, 239, 0) 25%, rgba(239, 239, 239, 0) 75%, #efefef 75%, #efefef);
+    background-image: url('https://i.pinimg.com/736x/91/8c/78/918c78f638c758e24e780b0dc34c880a.jpg');
+    background-size: cover;
+    justify-content: center;
+    min-height: fit-content;
+    min-width: fit-content;
+    padding: 20px;
+}
+
+.container .heading {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #2e3030;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    font-size: 50px;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns in each row */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limiting width */
+    margin: 0 auto; /* Centers the grid */
+    padding: 10px;
+}
+
+.container2 .box {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container2 .box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    height: 180px;
+    width: 200px;
+}
+
+.container2 .box h3 {
+    color: #444;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.container2 .box p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.container2 .box .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: #2069a5;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    cursor: grab;
+}
+
+.container2 .box:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .container2 {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .container2 {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}
